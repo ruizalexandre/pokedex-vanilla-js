@@ -1,23 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <title>Pokédex - First generation</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/pokedex.service.js"></script>
-  </head>
+</head>
 
-  <body>
+<body class="w3-container">
+    <!-- Pokedex Toolbar -->
+    <div class="pokedex-toolbar-layout w3-card">
+        <div class="pokedex-toolbar">
+            <div class="big-circle"></div>
+            <div class="little-circles">
+                <div class="w3-red"></div>
+                <div class="w3-amber"></div>
+                <div class="w3-green"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pokedex List -->
+    <div class="w3-card pokedex-list-layout">
+        <div id="pokedex-list" class="w3-card pokedex-list-background"></div>
+    </div>
+
     <script>
-      pokedexService.fetchAll()
-        .then(function (pokemons) {
-          console.log(pokemons);
-        });
+        pokedexService.fetchAll()
+            .then(function(pokemons) {
+                var pokedexListElement = document.getElementById('pokedex-list');
+                var pokedexListFragment = document.createDocumentFragment();
+
+                pokemons.forEach(function(pokemon) {
+                    var pokemonListItem = document.createElement('div');
+                    pokemonListItem.className = 'pokemon-list-item';
+
+                    // ----------
+                    // Pokemon image
+                    // ----------
+                    var pokemonImage = document.createElement('img');
+                    pokemonImage.src = pokedexService.pokemonImageUrl(pokemon.id);
+                    pokemonImage.setAttribute('thumnbnails-pokemon', '');
+                    pokemonListItem.appendChild(pokemonImage);
+
+                    // ----------
+                    // Pokemon types badges
+                    // ----------
+                    var typeBadgesFragment = document.createDocumentFragment();
+                    var types = pokemon.type.forEach(function(type) {
+                        var typeBadge = document.createElement('img');
+                        typeBadge.className = 'type-badge';
+                        typeBadge.src = pokedexService.getTypeBadge(type);
+                        typeBadgesFragment.appendChild(typeBadge);
+                    });
+
+                    var pokemonDescription = document.createElement('div');
+                    pokemonDescription.className = 'w3-small';
+                    pokemonDescription.appendChild(typeBadgesFragment);
+
+                    // ----------
+                    // Pokemon name
+                    // ----------
+                    var pokemonName = document.createElement('div');
+                    pokemonName.className = 'pokemon-name';
+                    pokemonName.innerHTML = '#' + pokedexService.formattedId(pokemon.id) + ' ' + pokemon.name.english;
+
+                    // ----------
+                    // Pokemon information
+                    // ----------
+                    var pokemonInfo = document.createElement('div');
+                    pokemonInfo.className = 'pokemon-info';
+                    pokemonInfo.appendChild(pokemonName);
+                    pokemonInfo.appendChild(pokemonDescription);
+                    pokemonListItem.appendChild(pokemonInfo);
+
+                    // ----------
+                    // PokemonListItem append to list
+                    // ----------
+                    pokedexListFragment.appendChild(pokemonListItem);
+                });
+
+                pokedexListElement.appendChild(pokedexListFragment);
+
+                // ----------
+                // Author section
+                // ----------
+                var authorRedirectButton = document.createElement('a');
+                authorRedirectButton.href = 'https://github.com/ruizalexandre'
+                authorRedirectButton.innerHTML = 'Created by @ruizalexandre';
+
+                var authorSection = document.createElement('div');
+                authorSection.className = 'author-section';
+                authorSection.appendChild(authorRedirectButton);
+
+                pokedexListElement.appendChild(authorSection);
+            });
     </script>
-  </body>
+</body>
 
 </html>

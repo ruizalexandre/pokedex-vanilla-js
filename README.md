@@ -1,11 +1,17 @@
 # Pokedex
 
+### Demo
+
+Play with the Pokedex [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
+
 ### About 
 
 This project is realized by [@ruizalexandre](https://github.com/ruizalexandre) with only Javascript.
 
 * [w3css](https://www.w3schools.com/w3css/) library used for style.
 * Javascript for generating views, implement services
+* Using this [repository](https://github.com/ruizalexandre/pokedex) to request resources
+* Using badge from [shields.io](https://shields.io)
 
 ### Copyrights
 
