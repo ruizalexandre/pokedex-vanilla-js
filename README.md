@@ -2,7 +2,8 @@
 
 ### Demo
 
-Play with the Pokedex [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
+* Old school design [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
+* Next version available [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/next/), with Boostrap.
 
 ### About 
 
