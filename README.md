@@ -2,8 +2,9 @@
 
 ### Demo
 
-* Old school design [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
-* Next version available [here](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/next/), with Boostrap.
+[![](https://img.shields.io/badge/Pokédex-classic-red)](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
+[![](https://img.shields.io/badge/Pokédex-next-blue)](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/next/)
+
 
 ### About 
 
