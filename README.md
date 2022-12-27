@@ -2,8 +2,8 @@
 
 ### Demo
 
-[![](https://img.shields.io/badge/Pokédex-classic-red)](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/)
-[![](https://img.shields.io/badge/Pokédex-next-blue)](https://the-fellowship-of-the-code.github.io/pokedex-vanilla-js/next/)
+[![](https://img.shields.io/badge/Pokédex-classic-red)](https://ruizalexandre.github.io/pokedex-vanilla-js/)
+[![](https://img.shields.io/badge/Pokédex-next-blue)](https://ruizalexandre.github.io/pokedex-vanilla-js/next/)
 
 
 ### About 
